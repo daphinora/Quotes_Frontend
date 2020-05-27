@@ -9,12 +9,22 @@ class QuotesPage extends Component {
     constructor() {
         super();
         this.state = {
-            quotes: []
+            quotes: [],
+            myquotes: []
         }
     }
 
     componentDidMount() {
         this.getQuotes()
+    }
+
+    handleSaveClick = (e, q) => {
+        e.stopPropagation()
+        this.setState({quotes: this.state.quotes.filter(quote => quote === q)})
+        // console.log(quo.first)
+        this.setState({myquotes: this.state.quotes})
+        // console.log(this.state.myquotes)
+        // this.getQuotes()
     }
 
     getQuotes() {
@@ -29,7 +39,7 @@ class QuotesPage extends Component {
         return (
             <div>
                 <QuoteCollection quotes={this.state.quotes} />
-                <QuoteGenerator quotes={this.state.quotes} />
+                <QuoteGenerator quotes={this.state.quotes} handleSaveClick={this.handleSaveClick}/>
             </div>
         )
     }
