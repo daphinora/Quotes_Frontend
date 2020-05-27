@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class QuoteCard extends Component {
+export default class QuoteGenerator extends Component {
     render() {
         return (
             <div>
-              <h3> I am QuoteCard</h3>  
+                {props.quotes}
             </div>
         )
     }
