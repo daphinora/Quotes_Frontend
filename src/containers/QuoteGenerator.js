@@ -16,6 +16,7 @@ export default class QuoteGenerator extends Component {
 
     renderQuote() {
         let quote = this.props.quotes.filter(q => q.id === this.state.index)
+        console.log(quote)
         return quote.map(quote => <QuoteCard key={quote.id} quote={quote} handleClick={this.handleClick}/>)
     }
     
