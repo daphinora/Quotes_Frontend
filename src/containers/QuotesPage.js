@@ -12,10 +12,10 @@ class QuotesPage extends Component {
             quotes: []
         }
     }
+
     componentDidMount() {
         this.getQuotes()
     }
-
 
     getQuotes() {
         fetch(URL)
@@ -29,7 +29,7 @@ class QuotesPage extends Component {
         return (
             <div>
                 <QuoteCollection />
-                <QuoteGenerator quotes ={this.state.quotes}/>
+                <QuoteGenerator quotes={this.state.quotes} />
             </div>
         )
     }

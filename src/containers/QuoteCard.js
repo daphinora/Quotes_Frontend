@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-export default class QuoteCard extends Component {
-    render() {
-        return (
-            <div>
-              <h3> I am QuoteCard</h3>  
-            </div>
-        )
-    }
+const QuoteCard = (props) => {
+    return (
+        <div>
+           {props.quote.author} 
+        <button onClick={(e) => props.handleClick()}>Next Quote</button>
+        </div>
+    );
 }
+
+export default QuoteCard;

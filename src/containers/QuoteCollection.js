@@ -3,10 +3,12 @@ import QuoteCard from './QuoteCard.js'
 
 
  class QuoteCollection extends Component {
+    
+    
     render() {
         return (
             <div>
-                <QuoteCard />
+                {/* <QuoteCard quote={this.props.quotes}/> */}
             </div>
         )
     }
