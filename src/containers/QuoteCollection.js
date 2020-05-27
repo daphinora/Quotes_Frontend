@@ -8,7 +8,7 @@ import QuoteCard from './QuoteCard.js'
     render() {
         return (
             <div>
-                {/* <QuoteCard quote={this.props.quotes}/> */}
+                <QuoteCard quote={this.props.quotes}/>
             </div>
         )
     }

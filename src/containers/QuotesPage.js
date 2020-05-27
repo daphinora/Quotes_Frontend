@@ -28,7 +28,7 @@ class QuotesPage extends Component {
     render() {
         return (
             <div>
-                <QuoteCollection />
+                <QuoteCollection quotes={this.state.quotes} />
                 <QuoteGenerator quotes={this.state.quotes} />
             </div>
         )
