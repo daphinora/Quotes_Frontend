@@ -1,9 +1,8 @@
-
 import React, { Component } from 'react'
 import QuoteCollection from './QuoteCollection.js'
 import QuoteGenerator from './QuoteGenerator.js'
 
-URL = "http://localhost:3000/quotes"
+const URL = "http://localhost:3000/quotes"
 
 class QuotesPage extends Component {
     constructor() {
@@ -44,10 +43,10 @@ class QuotesPage extends Component {
 
     render() {
         return (
-            <div className="card">
-                <QuoteCollection quotes={this.state.quotes.filter(quote => quote.saved)} />
-                <QuoteGenerator quotes={this.state.quotes} handleSaveClick={this.handleSaveClick} />
-            </div>
+                <div className="card">
+                    <QuoteCollection quotes={this.state.quotes.filter(quote => quote.saved)} />
+                    <QuoteGenerator quotes={this.state.quotes} handleSaveClick={this.handleSaveClick} />
+                </div>  
         )
     }
 }
