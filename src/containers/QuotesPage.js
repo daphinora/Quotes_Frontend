@@ -18,6 +18,16 @@ class QuotesPage extends Component {
     }
 
 
+    patchCollection(q) {
+        fetch(URL + `/${q.id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({saved: true})
+        })
+    }
 
 
     handleSaveClick = (e, q) => {
@@ -30,6 +40,8 @@ class QuotesPage extends Component {
                 return quote
             })
         })
+
+        this.patchCollection(q)
     }
 
 
@@ -43,10 +55,10 @@ class QuotesPage extends Component {
 
     render() {
         return (
-                <div className="card">
-                    <QuoteCollection quotes={this.state.quotes.filter(quote => quote.saved)} />
-                    <QuoteGenerator quotes={this.state.quotes} handleSaveClick={this.handleSaveClick} />
-                </div>  
+            <div className="card">
+                <QuoteCollection quotes={this.state.quotes.filter(quote => quote.saved)} />
+                <QuoteGenerator quotes={this.state.quotes} handleSaveClick={this.handleSaveClick} />
+            </div>
         )
     }
 }
