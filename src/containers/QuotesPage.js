@@ -10,7 +10,7 @@ class QuotesPage extends Component {
         super();
         this.state = {
             quotes: [],
-            myquotes: []
+
         }
     }
 
@@ -18,14 +18,21 @@ class QuotesPage extends Component {
         this.getQuotes()
     }
 
+
+
+
     handleSaveClick = (e, q) => {
         e.stopPropagation()
-        this.setState({myquotes: this.state.quotes.filter(quote => quote === q)})
-        // console.log(quo.first)
-        //this.setState({myquotes: this.state.quotes})
-        // console.log(this.state.myquotes)
-        // this.getQuotes()
+        this.setState({
+            quotes: this.state.quotes.map(quote => {
+                if (quote === q) {
+                    quote.saved = true
+                }
+                return quote
+            })
+        })
     }
+
 
     getQuotes() {
         fetch(URL)
@@ -37,9 +44,9 @@ class QuotesPage extends Component {
 
     render() {
         return (
-            <div className = "card">
-                <QuoteCollection quotes={this.state.quotes} />
-                <QuoteGenerator quotes={this.state.quotes} handleSaveClick={this.handleSaveClick}/>
+            <div className="card">
+                <QuoteCollection quotes={this.state.quotes.filter(quote => quote.saved)} />
+                <QuoteGenerator quotes={this.state.quotes} handleSaveClick={this.handleSaveClick} />
             </div>
         )
     }
