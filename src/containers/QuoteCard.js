@@ -1,12 +1,13 @@
 import React from 'react';
+import '../App.css';
 
 const QuoteCard = (props) => {
     return (
-        <div>
+        <div >
             <div>
-                {props.quote.text}
+                <h1> {props.quote.text}  </h1>
             </div>
-            <div>
+            <div className="author">
                 {props.quote.author}
             </div>
         </div>
