@@ -5,8 +5,7 @@ const QuoteCard = (props) => {
     return (
         <div >
             <div>
-                <h1> The greatest glory in living lies not in never falling, 
-                    but in rising every time we fall  </h1>
+                <h1> {props.quote.text}  </h1>
             </div>
             <div className="author">
                 {props.quote.author}

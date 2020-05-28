@@ -20,9 +20,9 @@ class QuotesPage extends Component {
 
     handleSaveClick = (e, q) => {
         e.stopPropagation()
-        this.setState({quotes: this.state.quotes.filter(quote => quote === q)})
+        this.setState({myquotes: this.state.quotes.filter(quote => quote === q)})
         // console.log(quo.first)
-        this.setState({myquotes: this.state.quotes})
+        //this.setState({myquotes: this.state.quotes})
         // console.log(this.state.myquotes)
         // this.getQuotes()
     }
