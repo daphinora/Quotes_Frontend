@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import QuoteCard from './QuoteCard.js'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 
 class QuoteCollection extends Component {
@@ -9,7 +10,9 @@ class QuoteCollection extends Component {
         return (
             <div className="col">
                 <div>
-                    <h3>My Collection</h3>
+                    <Link to= {'/collection'}>
+                    My Collection
+                    </Link>
                     {this.props.quotes.map(quote =>
                         <QuoteCard key={quote.id} quote={quote} />)}
                 </div>
