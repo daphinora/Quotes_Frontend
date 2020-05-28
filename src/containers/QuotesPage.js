@@ -37,7 +37,7 @@ class QuotesPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className = "card">
                 <QuoteCollection quotes={this.state.quotes} />
                 <QuoteGenerator quotes={this.state.quotes} handleSaveClick={this.handleSaveClick}/>
             </div>

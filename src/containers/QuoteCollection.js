@@ -7,8 +7,10 @@ import QuoteCard from './QuoteCard.js'
     
     render() {
         return (
-            <div>
-                <QuoteCard quote={this.props.quotes}/>
+            <div className="col">
+                <div>
+              <h3 className="h3"><QuoteCard quote={this.props.quotes}/></h3>
+            </div>
             </div>
         )
     }

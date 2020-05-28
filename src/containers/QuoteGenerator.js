@@ -17,11 +17,16 @@ export default class QuoteGenerator extends Component {
     renderQuote() {
         let quote = this.props.quotes.filter(q => q.id === this.state.index)
         // console.log(quote)
-        return quote.map(quote => <div>
-            <QuoteCard key={quote.id} quote={quote} />
-            <button onClick={(e) => this.handleNextClick()}>Next Quote</button>
-            <button onClick={(e) => this.props.handleSaveClick(e, quote)}>Save Quote</button>
-        </div>
+        return quote.map(quote =>
+            <div className="blockquote-wrapper">
+                <div className="blockquote" >
+                    <div className ="gen">
+                    <QuoteCard key={quote.id} quote={quote} />
+                    <button className="btnDiv" onClick={(e) => this.handleNextClick()}>Next Quote</button>
+                    <button className="btnnDiv" onClick={(e) => this.props.handleSaveClick(e, quote)}>Save Quote</button>
+                </div>
+                </div>
+            </div>
         )
     }
 
