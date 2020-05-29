@@ -79,14 +79,14 @@ class CollectionPage extends Component {
 
     render() {
         return (
-            <div className="body">
+            <div >
                 <div className="nav">
+                    <QuoteCollection quotes={this.state.quotes.filter(quote => quote.saved)} />
                     <Link to={'/'} >
                         Generate New Quote
                     </Link>
                 </div>
-                <QuoteCollection quotes={this.state.quotes.filter(quote => quote.saved)} />
-                <button className="btnnDiv" onClick={(e) => this.getAnalysis()}>Analyze My Sentiments!</button>
+                <button className="btnnDivv" onClick={(e) => this.getAnalysis()}>Analyze My Sentiments!</button>
             </div>
         )
     }
