@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import QuoteCollection from './QuoteCollection.js'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 
 const URL = "http://localhost:3000/quotes"
@@ -18,26 +19,26 @@ class CollectionPage extends Component {
     }
 
     positiveReturn() {
-        document.querySelector("body").style.backgroundColor = "#dbce94"
+        document.querySelector("body").classList.add("positive")
         document.querySelector("button").style.backgroundColor = "orange"
 
         alert("Hey, you're pretty positive! Keep up the good work!")
     }
 
     negativeReturn() {
-        document.querySelector("body").style.backgroundColor = "maroon"
+        document.querySelector("body").classList.add("negative")
         document.querySelector("button").style.backgroundColor = "grey"
         alert("Hey, you suck. Why not make some better life choices?")
     }
 
     neutralReturn() {
-        // document.querySelector("button").style.backgroundColor = "white"
+        // document.querySelector("body").classList.add("neutral")
         alert("meh. who cares")
     }
 
     returnSentiment() {
         if (this.state.q >= 1) {
-           this.positiveReturn()
+            this.positiveReturn()
         }
         else if (this.state.q <= -1) {
             this.negativeReturn()
@@ -79,6 +80,11 @@ class CollectionPage extends Component {
     render() {
         return (
             <div className="body">
+                <div className="nav">
+                    <Link to={'/'} >
+                        Generate New Quote
+                    </Link>
+                </div>
                 <QuoteCollection quotes={this.state.quotes.filter(quote => quote.saved)} />
                 <button className="btnnDiv" onClick={(e) => this.getAnalysis()}>Analyze My Sentiments!</button>
             </div>
