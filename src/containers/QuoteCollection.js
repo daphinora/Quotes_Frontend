@@ -9,12 +9,14 @@ class QuoteCollection extends Component {
     render() {
         return (
             <div className="col">
-                <div>
-                    <Link to= {'/collection'}>
-                    My Collection
+                <div className="nav">
+                    <Link to={'/collection'} >
+                        My Collection
                     </Link>
-                    {this.props.quotes.map(quote =>
-                        <QuoteCard key={quote.id} quote={quote} />)}
+                    <h4 >
+                        {this.props.quotes.map(quote =>
+                            <QuoteCard key={quote.id} quote={quote} deleteQuote={this.props.deleteQuote} />)}
+                    </h4>
                 </div>
             </div>
         )

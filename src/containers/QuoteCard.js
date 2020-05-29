@@ -7,9 +7,18 @@ const QuoteCard = (props) => {
             <div>
                 <h1> {props.quote.text}  </h1>
             </div>
-            <div className="author">
+            <div>
                 {props.quote.author}
             </div>
+            {/* <div>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation(); 
+                  props.deleteQuote(props.quote)}}
+              >
+                x
+              </button>
+        </div> */}
         </div>
     );
 }

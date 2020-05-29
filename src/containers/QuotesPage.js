@@ -25,7 +25,7 @@ class QuotesPage extends Component {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
-            body: JSON.stringify({saved: true})
+            body: JSON.stringify({ saved: true })
         })
     }
 
@@ -40,11 +40,11 @@ class QuotesPage extends Component {
                 return quote
             })
         })
-
         this.patchCollection(q)
     }
 
-
+    
+ 
     getQuotes() {
         fetch(URL)
             .then(r => r.json())
@@ -56,7 +56,7 @@ class QuotesPage extends Component {
     render() {
         return (
             <div className="card">
-                <QuoteCollection quotes={this.state.quotes.filter(quote => quote.saved)} />
+                <QuoteCollection quotes={this.state.quotes.filter(quote => quote.saved)} deleteQuote={this.deleteQuote}/>
                 <QuoteGenerator quotes={this.state.quotes} handleSaveClick={this.handleSaveClick} />
             </div>
         )

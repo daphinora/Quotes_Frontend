@@ -8,15 +8,12 @@ class CollectionPage extends Component {
         super();
         this.state = {
             quotes: [],
-
         }
     }
 
     componentDidMount() {
         this.getQuotes()
     }
-
-
 
     getQuotes() {
         fetch(URL)
@@ -28,7 +25,7 @@ class CollectionPage extends Component {
 
     render() {
         return (
-            <div className="card">
+            <div>
                 <QuoteCollection quotes={this.state.quotes.filter(quote => quote.saved)} />
                 
             </div>
